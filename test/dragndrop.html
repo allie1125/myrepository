@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Drag Order Image Upload</title>
+    <link href="fontawesome-free-5.13.0-web/w3.css" rel="stylesheet"/>
+    <link href="fontawesome-free-5.13.0-web/font-awesome.min.css" rel="stylesheet"/>
+    <link href="fontawesome-free-5.13.0-web/font-awesome.min.css" rel="stylesheet"/>
+
+
+</head>
+<body>
+
+<div class="container">
+    <form role="form" action="upload.php" method="post" enctype="multipart/form-data">
+        <div class="w3-row">
+            <div class="w3-col m12 s12">
+                <div class="w3-col m12 s12 l12"  id="columns">
+                    <div id="uploads">
+                    </div>
+                    <div class="clear"></div>
+                    <button type="reset" id="reset" class="w3-button w3-red w3-left">
+                        <i class="fa fa-history"></i>Clear
+                    </button>
+                    <button type="submit" class="w3-button w3-blue w3-right">
+                        <i class="fa fa-upload"></i>Upload
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/modernizr.min.js"></script>
+<script src="js/uploadHBR.min.js"></script>
+<script>
+    uploadHBR.init({
+        'target':"#uploads",
+        'max': 18,
+        'textNew': "Drag $ Drop"
+    })
+    jQuery(function () {
+        $("#reset").on("click",function () {
+            uploadHBR.reset("#reset");
+        });
+    });
+</script>
+</body>
+</html>

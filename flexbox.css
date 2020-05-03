@@ -1,0 +1,177 @@
+.gallery-container {
+    /*부모 요소에 반드시 지정해야 하는 유일한 속성이며, 자식 요소는 자동적으로 flex item이 된다.*/
+    display: flex;
+    /*컨테이너의 주축 방향을 설정 (좌에서 우로)*/
+    flex-direction: row;
+    /*컨테이너보다 아이템의 크기가 큰 경우, 아이템 각각의 크기를 줄일 것인 지, 개행 할 것인 지.*/
+    flex-wrap: wrap;
+
+    /*flex-flow: row-reverse wrap-reverse;*/
+
+    margin: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    background: #ffffff;
+    /*컨테이너 안에서 아이템들을 어디 기준으로 정렬할 지.*/
+    justify-content: center;
+    align-items: center;
+    align-items: baseline;
+    align-content: stretch;
+}
+
+.gallery-items{
+    text-align: center;
+}
+
+
+
+.gallery-item:hover{
+    transform: scale(1.1);
+}
+.gallery-item {
+    /*flex item의 배치 순서*/
+
+    order: revert;
+    flex-basis: auto;
+    float: left;
+    margin: 10px;
+    padding: 100px;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    background: #fff;
+    background-size: cover;
+    width: 400px;
+    height: 280px;
+
+}
+
+.gallery-item .hide{
+    display: none;
+}
+.gallery-item .show{
+    display: block;
+    animation: show .5s ease;
+}
+
+@keyframes show {
+    0%{
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100%{
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+.title{
+    color: #4584b1;
+}
+
+/*like button effect*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body.like{
+    font-family: Verdana;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+a.like{
+    color: #00000030;
+    font-size: 2em;
+}
+
+.likeCount{
+    font-family: Verdana;
+    font-size: 2em;
+}
+
+.heart i.fa-heart{
+    color: #f44336;
+}
+.heart{
+    animation: heart 0.5s linear;
+}
+@keyframes heart {
+    0%{
+        transform: rotate(0deg) scale(1.7);
+    }
+    40%{
+        transform: rotate(0deg) scale(1);
+    }
+    41%{
+        transform: rotate(360deg) scale(1);
+    }
+    100%{
+        transform: rotate(0deg) scale(1.7);
+    }
+
+}
+
+.cases-links .pagination{
+    width: 100%;
+    float: left;
+    padding: 15px;
+    text-align: center;
+}
+
+.cases-links .pagination div{
+ display: inline-block;
+    margin: 0 10px;
+}
+
+.cases-links .pagination .page {
+    color: #5a5a5a;
+}
+
+.cases-links .controls {
+    width: 100%;
+    float: left;
+    padding: 15px;
+}
+
+.cases-links .controls ul {
+    display: block;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.cases-links .controls ul li{
+    height:35px;
+    width: 35px;
+    border: 1px solid #5a5a5a;
+    margin: 4px;
+    display: inline-block;
+    line-height: 33px;
+    cursor: pointer;
+
+}
+
+.cases-links .controls ul li.active{
+    background-color: darkorange;
+    color: #f5f5f5f5;
+}
+
+.cases-links .pagination .prev, .cases-links .pagination .next{
+    color:#000;
+    border:1px solid #000;
+    font-size: 15px;
+    padding: 7px 15px;
+    cursor: pointer;
+}
+
+.cases-links .pagination .prev.disabled,
+.cases-links .pagination .next.disabled{
+    border-color: #cacaca;
+    color: #cacaca;
+    pointer-events: none;
+
+}

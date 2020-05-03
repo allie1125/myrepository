@@ -1,0 +1,18 @@
+<!doctype html>
+    <html>
+<head>
+    <meta charset="UTF-8">
+    <script src='/smarteditor/js/HuskyEZCreator.js charset="UTF-8"'></script>
+    <script scr="/javascript/jquery-1.12.4.js"></script>
+
+</head>
+<body>
+<textarea id="txtContent" rows="10" cols="100" style="width: 100%;"></textarea>
+<script> $(() => {
+    nhn.husky.EZCreator.createInIFrame({
+        oAppRef: editor, elPlaceHolder: 'txtContent', sSkinURI: '/plugin/smarteditor2/SmartEditor2Skin.html', fCreator: 'createSEditor2'
+    });
+}); </script>
+
+</body>
+</html>

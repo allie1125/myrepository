@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+</head>
+<body>
+
+<select id="list" onchange="getSelectValue()">
+    <option value="아시아">아시아</option>
+    <option value="유럽">유럽</option>
+    <option value="북미">북미</option>
+    <option value="기타지역">기타지역</option>
+</select>
+
+<script>
+  function  getSelectValue() {
+      var selectedValue = document.getElementById("list").value;
+      console.log(selectedValue);
+  }
+</script>
+</body>
+</html>

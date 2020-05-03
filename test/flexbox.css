@@ -1,0 +1,44 @@
+.gallery-container {
+    /*부모 요소에 반드시 지정해야 하는 유일한 속성이며, 자식 요소는 자동적으로 flex item이 된다.*/
+    display: flex;
+    /*컨테이너의 주축 방향을 설정 (좌에서 우로)*/
+    flex-direction: row;
+    /*컨테이너보다 아이템의 크기가 큰 경우, 아이템 각각의 크기를 줄일 것인 지, 개행 할 것인 지.*/
+    flex-wrap: wrap;
+
+    /*flex-flow: row-reverse wrap-reverse;*/
+
+    margin: 10px;
+    padding: 15px;
+    border-radius: 5px;
+    background: #ffffff;
+    /*컨테이너 안에서 아이템들을 어디 기준으로 정렬할 지.*/
+    justify-content: center;
+    align-items: center;
+    align-items: baseline;
+    align-content: stretch;
+}
+
+.gallery-items{
+    text-align: center;
+}
+.gallery-item {
+    /*flex item의 배치 순서*/
+
+    order: revert;
+    flex-basis: auto;
+    float: left;
+    margin: 10px;
+    padding: 100px;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    background: #4584b1;
+    background-size: cover;
+    width: 400px;
+    height: 280px;
+
+}
+.title{
+    color: #4584b1;
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>사진 업로드</title>
+    <script>
+        function Check(form){
+            if (!/[^\s]+/.test(form.title.value)){
+                alert('제목을 입력해 주세요.');
+                form.title.focus();
+                return;
+            }
+        if(!form.pic.value){
+            alert('사진이 등록되지 않았습니다.');
+            form.pic.focus();
+            return;
+        }
+        form.submit();
+        }
+
+    </script>
+</head>
+<body>
+<div class="picPopBox">
+    <h1 class="tit">사진업로드</h1>
+    <form name="picUpload" method="post" enctype="multipart/form-data" action="pic.upload.php">
+        <input type="hidden" name="userID">
+        <table class="table_row W100P">
+            <tr>
+                <th>제목</th>
+                <td><input type="text" name="title" size="35" maxlength="30"> </td>
+            </tr>
+            <tr>
+                <th>사진 업로드</th>
+                <td><input type="file" name="pic" accept="image/*"/></td>
+            </tr>
+        </table>
+        <div class="btnZone">
+            <input type="button" value="확인" onclick="Check(this.form);" class="btnOk btnSmall"/>
+            <input type="button" value="닫기" onclick="self.close();" class="btnC btnSmall"/>
+        </div>
+    </form>
+</div>
+</body>
+</html>
